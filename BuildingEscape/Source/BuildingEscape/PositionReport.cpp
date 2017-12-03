@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "PositionReport.h"
-
+#include "Gameframework/Actor.h"
 
 // Sets default values for this component's properties
 UPositionReport::UPositionReport()
@@ -10,6 +10,7 @@ UPositionReport::UPositionReport()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
+	
 	// ...
 }
 
@@ -19,6 +20,8 @@ void UPositionReport::BeginPlay()
 {
 	Super::BeginPlay();
 
+	FString ObjectName = GetOwner()->GetName();
+	UE_LOG(LogTemp, Warning, TEXT("Position report for %s"), *ObjectName)
 	// ...
 	
 }
